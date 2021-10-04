@@ -1,3 +1,7 @@
+ol, ul {
+  list-style: none;
+}
+
 .App {
   text-align: center;
 }
@@ -26,6 +30,16 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.input_row {
+  display: table;
+  table-layout: fixed;
+  border-radius: 6px;
+  border: 1px solid #dadada;
+  padding: 17px 18px 17px 19px;
+  box-sizing: border-box;
+  text-align: left;
 }
 
 @keyframes App-logo-spin {
