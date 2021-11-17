@@ -1,6 +1,6 @@
+import React from "react";
 
-
-function LoginForm() {
+function Login() {
 
 
 	return (
@@ -35,4 +35,4 @@ function LoginForm() {
 	)
 }
 
-export default LoginForm;
+export default Login;
