@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import { useNavigate } from 'react-router';
 
 function Login(props) {
 
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-	const navigate = useNavigate();
 
 	useEffect(() => {
 		return () => {
