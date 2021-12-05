@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import React from "react";
+import { useNavigate } from 'react-router';
 
-function Login() {
+function Login(props) {
 
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		
 		return () => {
 
 		}
@@ -21,14 +22,19 @@ function Login() {
 			},
 			body: JSON.stringify({"username":username, "password":password})
 		})
-		.then(res => res.json())
-		.then(data => console.log(data))
+		.then(res => console.log(res));
+	}
+
+	const callKakaoLogin = () => {
+
+		window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=28905262b69a56805097e8eea1fc075d&redirect_uri=http://localhost:3000/callback/kakao`;
 	}
 
 	return (
 	<div>
 		<h1>Login</h1>
 		<div id="id_pw_wrap">
+			{/* ID */}
 			<div className="input_row" id="id_line">
 				<input 
 					id="username"
@@ -38,6 +44,7 @@ function Login() {
 					onChange={(e) => setUsername(e.target.value)}
 					/>
 			</div>
+			{/* PW */}
 			<div className="input_row" id="pw_line">
 				<input
 					id="password" 
@@ -50,22 +57,25 @@ function Login() {
 		</div>
 		<div>
 			<input type="checkbox" id="keep" />
-			<label for="keep">로그인 상태 유지</label>
+			<label htmlFor="keep">로그인 상태 유지</label>
 		</div>
 		<div>
 			<button onClick={onLogin}>로그인</button>
 		</div>
-		<ui>
+		<ul>
 			<li>
-				<a href="#">비밀번호 찾기</a>
+				<a href="/">비밀번호 찾기</a>
 			</li>
 			<li>
-				<a href="#">아이디 찾기</a>
+				<a href="/">아이디 찾기</a>
 			</li>
 			<li>
-				<a href="#">회원가입</a>
+				<a href="/">회원가입</a>
 			</li>
-		</ui>
+		</ul>
+		<button onClick={callKakaoLogin}>
+			카카오 로그인
+		</button>
 	</div>
 	)
 }
