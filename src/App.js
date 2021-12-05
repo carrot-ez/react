@@ -12,11 +12,11 @@ import MainContext, {initialState, reducer} from './context/MainContext';
 
 function App() {
 
-  const [state, dispatcher] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const contextValue = useMemo( () => {
-    return {state, dispatcher};
-  }, [state, dispatcher]);
+    return {state, dispatch};
+  }, [state, dispatch]);
 
   return (
     <MainContext.Provider value={contextValue}>
