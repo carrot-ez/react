@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router'
-import MainContext from "../context/MainContext";
+import MainContext from "../../context/MainContext";
 
 function KakaoCallback() {
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
-import MainContext from "../context/MainContext";
+import MainContext from "../../context/MainContext";
 
-function Index() {
+function Home() {
 
     const navigate = useNavigate();
     const {state, dispatch} = useContext(MainContext);
@@ -23,4 +23,4 @@ function Index() {
     )
 }
 
-export default Index;
+export default Home;

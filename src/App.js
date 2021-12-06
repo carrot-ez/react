@@ -3,10 +3,10 @@ import './App.css';
 import { useReducer, useMemo } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 
-import Login from './view/Login'
-import Index from './view/Index';
-import NotFound from './view/NotFound';
-import KakaoCallback from './view/KakaoCallback';
+import Login from './view/login/Login'
+import Index from './view/home/Home';
+import NotFound from './view/not-found/NotFound';
+import KakaoCallback from './view/kakao-callback/KakaoCallback';
 
 import MainContext, {initialState, reducer} from './context/MainContext';
 
